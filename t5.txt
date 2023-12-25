@@ -1,0 +1,98 @@
+Functions:-
+    A block of code that fulfills a specific task
+
+JavaScript show hoisting. How?
+- hoisting is a behavior where variable and "function declarations" are moved to the top of their containing scope during the compilation phase, before the code is executed
+- When we declare function below the calling command then also the code run perfectly..
+- It automatically done by JS Engine.
+
+Function declarations:-
+    func(); // you can call above due to hoisting.
+    function func(){
+        console.log("Function Called");
+    }
+    func();
+
+Function Assignment:-
+    func(); // wrong, you cannot call above as only function declarations are hoisted.
+    let func = function(){
+        console.log("Funtion Called");
+    }
+    func();
+
+--------------------------------------------------------
+Arguments in function:-
+- argument is object in function which store all the data of parameters
+
+    1st Way:- (Without using rest parameter)
+    function sum(){
+        let total = 0;
+        for (let i of arguments){
+            total += i;
+        }
+        return total;
+    }
+
+    sum(1,2,8,9) -> 1+2+8+9 = 20
+
+    2nd Way:- (With using rest parameters) (Recommend)
+    function sum(...args){
+        let total = 0;
+        for (let i of args){
+            total += i;
+        }
+        return total;
+    }
+
+--------------------------------------------------------------
+
+Default Parameter:-
+
+function sum(a=3,b=5){
+    return a+b;
+}
+
+sum() -> 3+5 = 8
+sum(1) -> 1+5 = 6
+sum(1,2) -> 1+2 = 3
+
+Conversion : after we get a default parameter , all the parameter right to that is default too.
+
+----------------------------------------------------------------
+
+Getter and Setter:-
+
+let person = {
+    fName : "Akash",
+    lName : "Akp",
+    get fullName(){
+        return `${this.fName} ${this.lName}`;
+    }
+    set fullName(value){
+        let parts = value.split(' ');
+        this.fName = parts[0];
+        this.lName = parts[1];
+    }
+}
+
+console.log(person.fullName);
+person.fullName = "binayak parida"
+console.log(person.fullName);
+
+-------------------------------------------------------------------
+
+Error Handling :-
+
+try{
+
+}catch(e){
+
+}
+
+--------------------------------------------------------------------
+
+Scope:-
+
+let and const - scope is between two curly bracket {}
+var - scope is between function
+

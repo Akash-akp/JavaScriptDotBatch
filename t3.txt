@@ -1,0 +1,102 @@
+Object:-
+let rectangle = {
+    length: 1,
+    breadth: 2,
+    draw: function(){
+        console.log("draw")
+    }
+}
+console.log(rectangle.draw());
+
+Object Creation:-
+    1.Factory function :-
+        // camelNotation
+        function createRectangle(length,breadth){
+            return rectangle = {
+                length: length,
+                breadth: breadth,
+                draw: function(){
+                    console.log("draw")
+                }
+            }
+        }
+    2.Constructor function :-
+        // PascalNotation
+        function Rectangle(length,breadth){
+            this.length = length;
+            this.breadth = breadth;
+            this.draw = function(){
+                console.log("draw"); 
+            }
+        }
+        let r = new Rectangle(3,5);
+
+        Object Constructor creation throught Function() :--->
+        let fn = new Function('length','breadth',
+        `this.length = length;
+        this.breadth = breadth;
+        this.draw = function(){
+            console.log("draw"); 
+        }`
+        );
+
+
+What is the difference in primitive and Reference types?
+
+    Primitive data type is copied by the value and 
+    Reference data type is copied by the address value
+
+    for example:-
+        Primitive:-
+        let a = 10;
+        let b = a;
+        a++;
+        a->11
+        b->10
+
+        Reference:-
+        let m = {value:10};
+        let n = m;
+        m.value++;
+        m.value->11
+        n.value->11
+
+        Example(pass by function):-
+        pass by value:-
+        function inc(a){
+            a++;
+        }
+        let a = 10;
+        inc(a);
+        console.log(a);
+        a->10
+
+        pass by Reference
+        function inc(a){
+            a.value++;
+        }
+        let a = {value:10};
+        inc(a);
+        console.log(a.value);
+        a.value->11
+
+For in -> in dictionary
+For of -> array(iterable)
+in dictionary we can use For of :->
+    eg:- for i of Object.keys/Object.entries(rectangle){}
+
+Object Cloning:-
+    1.Iteration:-
+    let clone = {};
+    for key in Object.keys(rectangle){
+        clone[key] = src[key];
+    }
+
+    2.Assign:-
+    let clone = Object.assign({},src);
+
+    3.Spread:-
+    let clone = {...src}
+
+Garbage Collector:-
+    Deallocate the memory of that variable which is not used by that program.

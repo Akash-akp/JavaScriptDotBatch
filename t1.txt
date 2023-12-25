@@ -1,0 +1,31 @@
+Javascript
+- It is light weight scripting language. 
+- It is invented in 1995 and previously known as Mocha.
+- It is invented by netscape.
+- Client side language.
+- 
+
+What can we do with JS?
+- Web app / native app / mobile app.
+- Game
+
+Do we need complier for JS?
+- We need js engine
+SpiderMonkey(Js engine in morzilla)
+V8(Js engine in chrome)
+
+We add c++ program in javascript -> Node
+After that we can use Javascript in Server side too -> Node.js 
+We can use JS to communicate between devices (Client-Server Architecture)
+
+Adding JS in code:-
+<html>
+<head>
+</head>
+<body>
+    ......
+    <script src="srcipt.js" >
+
+    </script>
+</body>
+</html>

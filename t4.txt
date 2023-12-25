@@ -1,0 +1,130 @@
+Math Library:-
+    - Math.round(1.8)
+    - Math.max(2,1,4,3)
+    - Math.min(5,2,8,1,9)
+    - Math.abs(-2)
+    - Math.PI
+    - Math.sin()
+    - Math.sinh()
+
+
+Is string a primitive or object?
+    it is both primitive and object depend on how you intialise it.
+
+    - primitive:-
+    let a = "Hello";
+    console.log(typeof(a));
+
+    - object:-
+    let a = new String("Hello");
+    console.log(typeof(a));
+
+String function:-
+
+can we apply the string function in primitive type too? 
+YES, it convert the primitive type string to object.
+
+what are the string function?
+    - length()
+    - includes()
+    - startsWith()
+    - endsWith()
+    - indexOf()
+    - trim()
+    - trimStart()
+    - trimEnd()
+    - replace("","")
+    - split()
+    - toUpperCase()
+    - toLowerCase()
+    
+Template Literal:-
+    let lastName = 'Akash';
+    let k = `Hello 
+    ${lastName} 
+    How are you.
+    `;
+    console.log(k);
+
+Date:- 
+    let date = new Date();
+    console.log(date);
+
+    There are 5 ways:-
+
+    1st way:-
+    let date2 = new Date('4 June 2002 4:30')
+    console.log(date2);
+
+    2nd way:-
+    let date3 = new Date(2002,5,4,4,30);
+    console.log(date3);
+
+    There are many method by which we can change the value of date:-
+     - setFullYear()
+     - setHours()
+     - setMonth()
+     - setMilliseconds()
+     - setMinutes()
+     - setSeconds()
+
+
+Arrays:-
+    Object/Reference type that store collection of items
+     - Adding new elements 
+        arr.push() -> at end
+        arr.unshift() -> at beginning
+        arr.splice(index,delete count,[1,2,3(element to add)]) -> at middle
+
+     - Finding elements
+        indexOf() -> return index of first occurence and return -1 if not present
+        include() -> return true if the number present in the array otherwise false
+        indexOf(element to find,index from which search start) -> this will start searching from specific index
+
+        NOTE:- this methods can be called only for the array of primitive data type. Callback function is needed
+
+        We can use find method to find object in the array of object
+        let courses = [{no:1,subject:"English"},{no:2,subject:"Hindi"}];
+        let course = courses.find((course)=> course.no === 1);
+
+     - Removing elements
+        arr.pop() -> at end
+        arr.shift() -> at start
+        arr.splice(index,delete count) -> at middle
+
+     - Clearing elements in array
+        arr.length = 0 (Mostly used) ***
+        arr.splice(0,arr.length)
+
+     - Splitting elements
+        arr.slice(start index(include),end index (exclude));
+        
+     - Combining elements
+        arr = arr.concat(arr1)
+        Spread Operator:-
+        let comb = [...arr,1,...arr1];
+
+     - Iterating an Arrays
+        - for i of arr{}
+        - arr.forEach(callbackfunction)
+
+     - Joining an Arrays
+        - arr.join(',');
+
+     - Splitting an Arrays
+        - stringstr.split(' ')
+
+     - Sorting an Array
+        - arr.sort() -> this is for array of primitive type after converting it to string
+        - arr.sort(compare function)
+     
+     - Filtering an Array
+        - arr.filter(function(){}) -> inside the bracket there is a function it filter out that element which return positive value
+
+     - Mapping Array
+        - arr.map(function(){}) -> return elements store in an array.
+
+     - Reducing Array
+        - arr.reduce(callbackfunction,initialised value) 
+        let arr = [1,2,3,4,5];
+        console.log(arr.reduce((a,b)=>a+b));
