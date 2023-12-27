@@ -1,0 +1,55 @@
+Browser Listener:-
+
+Event Target:- 
+Interface implemented by the object that can recieve event and may have listener for them.
+3 Methods:-
+ 1.addEventListener() -> listen and respond to event
+    <event_target>.addEventListener(<event_type>,<function>);
+    event_target :- component like document,p,div,article,etc
+    event_type :- click, dblclick , scroll
+    function :- function will happen after the event has occured
+ 2.removeEventListener() -> remove the event for the component
+    <event_target>.removeEventListener(<event_type>,<function>);
+    the condition is event_target,event_type,and funtion should be same.
+ 3.dispatchEvent()
+
+-----------------------------------------------------------------------------------
+
+Phase of an event :-
+  1. Caputuring Phase
+  2. At target Phase
+  3. Bubbling Phase
+
+By default, the event occur in bubbling phase but if we want the event to occur in capturing phase,
+<event_target>.addEventListener(<event_type>,<function>,true);
+true is used in the last parameter to occur the event in capturing phase.
+
+
+-------------------------------------------------------------------------------------
+
+event.preventDefault() => prevent default event 
+For example:-
+   let a = document.querySelector(a);
+   a.addEventListener('click',(event)=>{
+      event.preventDefault();
+   });
+
+-------------------------------------------------------------------------------------
+
+event.target.nodeName == "SPAN"
+
+<div>
+   <p> ... <span> ... </span> ... </p>
+   .....
+   .....
+   ....
+</div>
+
+let element = document.querySelector(div);
+element.addEventListener('click',(event)=>{
+   if(event.target.nodeName == "SPAN"){
+      console.log("Span is clicked");
+   }
+});
+
+----------------------------------------------------------------------------------------
