@@ -97,3 +97,27 @@ child.parentElement.removeChild(child)
 
 ----------------------------------------------------------------------------------
 
+Changing CSS property using JS command:-
+
+1st Way:-
+content.style.color = 'red';
+content.style.backgroundColor = 'white';
+
+2nd Way:-
+content.style.cssText = 'color:green; background-color:yellow; font-size:4em'
+
+3rd Way:-
+content.setAttribute('style','background-color:red'); 
+We not only change the css property using setAttribute method, we can change the id too.
+content.setAttribute('id','HelloID');
+
+4th Way:-
+content.className -> return the string of the class listed in that specific element.
+
+5th Way:-
+content.classList -> return object that listed the class in that specific element.
+    methods:-
+    - add
+    - remove
+    - toggle
+    - contains
