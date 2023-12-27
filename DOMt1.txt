@@ -1,0 +1,99 @@
+window                  DOM                    BOM
+
+Window - Global object created by browser and represent browser window
+    this contains DOM, BOM and JS core function
+
+DOM(Document Object Model) -  Whole HTML code is converted into JS object 
+
+BOM(Browser Object Model) - Except content, if there is any other issue to handle then BOM will handle
+
+-----------------------------------------------------------------------------------
+
+Funtions/Method for DOM :-
+
+1.getElementById() -> return the element that have same id.
+2.getElementsByClassName() -> return the html collection of all elements that have same class Name.
+3.getElementsByTagName() -> return the html collection of all elements that have same Tag Name.
+
+Things to keep in mind:-
+- 2&3 have Elements where 1 has Element in name.
+- 2&3 return html collection not array but it behaves like an array.
+
+---------------------------
+
+id - #   class - .   tag - only name 
+
+There is another funtion that is used to filter out element that is 
+
+1. querySelector() - This willl filter out the first occurence of the matching element
+    document.querySelector('#id')
+    document.querySelector('.class')
+    document.querySelector('Tag')
+
+2. querySelectorAll() - This willl filter out all the element in NodeList that match the id/class/Tag
+    document.querySelectorAll('#id')
+    document.querySelectorAll('.class')
+    document.querySelectorAll('Tag')
+
+-------------------------------------------------------------------------------------
+
+Updating the existing content:-
+
+1.InnerHTML :- with this command we get/set the inner HTML content of selected element.
+2.OuterHTML :- with this command we get/set the inner HTM conntent and the element itself.
+3.innerText :- with this command we can get/set the visible text of html which get displayed in page.
+4.contentText :- with this command we can get/set the visible and invisible text of html.
+
+-------------------------------------------------------------------------------------
+
+Creating and appending element inside the specific tag :-
+
+Way 1:-
+let a = document.getElementById('id');
+let p = document.createElement('p');
+let text = document.createTextNode('Hello');
+p.appendChild(text);
+a.appendChild(p);
+
+Way 2:-
+let a = document.getElementById('id');
+let p = document.createElement('p');
+p.textContent = 'hello';
+a.appendChild(p);
+
+-------------------------------------------------------------------------------------
+
+Inserting element in specific location
+
+a.insertAdjacentElement('location',content);
+
+locations:-
+    1.beforeBegin
+    2.afterBegin
+    3.beforeEnd
+    4.afterEnd
+
+let a = document.getElementById('id');
+let p = document.createElement('p');
+p.textContent = 'Hello Everyone';
+
+a.insertAdjacentElement('beforeBegin',p);
+a.insertAdjacentElement('afterBegin',p);
+a.insertAdjacentElement('beforeEnd',p);
+a.insertAdjacentElement('afterEnd',p);
+
+----------------------------------------------------------------------------------
+
+Removing Child Element:-
+
+let parent = ....;
+let child = .....;
+
+1st way:-
+parent.removeChild(child);
+
+Easy way:-
+child.parentElement.removeChild(child)
+
+----------------------------------------------------------------------------------
+
