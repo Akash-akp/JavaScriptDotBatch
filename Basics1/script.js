@@ -109,4 +109,46 @@
 // console.log(arr.reduce((a,b)=>a+b));
 
 
+// let t1 = performance.now();
 
+// for(let i=1;i<=100;i++){
+//     let p = document.createElement('p');
+//     p.textContent = 'i am para '+i;
+//     document.body.appendChild(p);
+// }
+
+// let t2 = performance.now();
+
+// console.log(t2-t1);
+
+// t1 = performance.now();
+
+// let d = document.createElement('div');
+// for(let i=1;i<=100;i++){
+//     let p = document.createElement('p');
+//     p.textContent = 'i am para '+i;
+//     d.appendChild(p);
+// }
+// document.body.appendChild(d);
+// t2 = performance.now();
+
+// console.log(t2-t1);
+
+// t1 = performance.now();
+
+// let fragment = document.createDocumentFragment();
+// for(let i=1;i<=100;i++){
+//     let p = document.createElement('p');
+//     p.textContent = 'i am para '+i;
+//     fragment.appendChild(p);
+// }
+// document.body.appendChild(fragment);
+// t2 = performance.now();
+
+// console.log(t2-t1);
+
+// while(true){
+//     console.log("HI");
+// }
+
+setTimeout(()=>console.log("hello"),50000)
