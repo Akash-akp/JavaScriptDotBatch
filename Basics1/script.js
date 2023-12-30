@@ -151,4 +151,37 @@
 //     console.log("HI");
 // }
 
-setTimeout(()=>console.log("hello"),50000)
+// setTimeout(()=>console.log("hello"),50000)
+
+// async function utility(){
+//     const res = await fetch('https://dummyjson.com/products');
+//     const json = await res.json();
+//     console.log(res);
+//     console.log(json);
+// }
+
+// utility();
+
+async function helper(){
+    let options = {
+        method: 'POST',
+        body: JSON. stringify({
+            title: 'foo', 
+            body: 'bar', 
+            userld: 1,
+        }) ,
+        headers:{
+            'Content-type':'application/json; charset=UTF-8',
+        }
+    };
+    let content = await fetch( 'https://jsonplaceholder.typicode.com/posts',options);
+    let response = content.json();
+    return response;
+}
+
+async function utility(){
+    let ans = helper();
+    console.log(ans);
+}
+
+utility();
